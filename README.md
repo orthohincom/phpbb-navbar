@@ -28,7 +28,7 @@ ACP:
 Upload orthohin directory to your board's ext directory.
 Enable the extension in ACP.
 
-#### ![Support topic at phpbb.com](https://www.phpbb.com/community/viewtopic.php?f=456&t=2438676)
+#### [Support topic at phpbb.com](https://www.phpbb.com/community/viewtopic.php?f=456&t=2438676)
 
 ### Resources Used:
 * [Isolated Bootstrap](https://github.com/toert/Isolated-Bootstrap)
