@@ -1,0 +1,72 @@
+<style type="text/css">
+  .bootstrap .navbar .nav > li > a:hover,
+  .bootstrap .navbar .nav > li > a:focus {
+    background-color: rgba(0,0,0,0.10) !important;
+  }
+  <!-- IF IS_COLOR -->
+  .bootstrap .navbar .nav > li > a,
+  /*.bootstrap .navbar ul.dropdown-menu,*/
+  .bootstrap .navbar {
+    background-color: {BACKGROUND_COLOR};
+  }
+  .bootstrap .navbar .navbar-toggle .icon-bar{
+    background-color: {TEXT_COLOR};
+  }
+  a.navbar-brand,
+  .bootstrap .navbar .nav > li > a {
+    color: {TEXT_COLOR};
+  }
+  <!-- ENDIF -->
+</style>
+
+<div class="bootstrap">
+  <nav class="navbar yamm <!-- IF not IS_COLOR --> navbar-default <!-- ENDIF -->navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <!-- IF LOGO_IMAGE_EXIST -->
+            <img height= "50px" src="{LOGO_FILENAME}" alt="{SITENAME}"/>
+          <!-- ELSE -->
+            <a class="navbar-brand" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->">{SITENAME}</a>
+          <!-- ENDIF -->
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav <!-- IF MENU_POSITION -->navbar-right<!-- ENDIF -->">
+          <!-- BEGIN menu -->
+            <!-- IF menu.IS_MEGA -->
+            <li class="drop-down">
+              <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="{menu.ICON}"></i>&nbsp;{menu.NAME} <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+
+                    {menu.MEGA_HTML}
+
+              </ul>
+            </li>
+              <!-- ELSE -->
+              <li>
+                <!-- IF not .menu.sub -->
+                <a href="{menu.URL}"<!-- IF menu.EXTERNAL --> target="_blank"<!-- ENDIF -->><i class="{menu.ICON}"></i>&nbsp;{menu.NAME}</a>
+
+                <!-- ELSE -->
+                <a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="{menu.ICON}"></i>&nbsp;{menu.NAME} <span class="caret"></span></a>
+                <!-- ENDIF -->
+                <!-- IF .menu.sub -->
+                <ul class="dropdown-menu">
+                  <!-- BEGIN sub -->
+                  <li><a href="{sub.URL}"<!-- IF sub.EXTERNAL --> target="_blank"<!-- ENDIF -->><i class="{sub.ICON} icon-flip-horizontal"></i>&nbsp;{sub.NAME}</a></li>
+                  <!-- END sub -->
+                </ul>
+                <!-- ENDIF -->
+              </li>
+            <!-- ENDIF -->
+          <!-- END menu -->
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+</div>

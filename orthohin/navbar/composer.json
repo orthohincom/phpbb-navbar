@@ -1,0 +1,30 @@
+{
+	"name": "orthohin/navbar",
+	"type": "phpbb-extension",
+	"description": "This extension allows the administrator to easily add and customize navbar item.",
+	"homepage": "http://www.orthohin.com",
+	"version": "1.0.0",
+	"keywords": ["phpbb", "navbar", "stickymenu", "megamenu"],
+	"license": "GNU General Public License v3.0",
+	"authors": [
+		{
+			"name": "Shafail Shafa",
+			"email": "admin@orthohin.com",
+			"homepage": "http://www.orthohin.com"
+		}
+	],
+	"require": {
+		"php": ">=5.3.3"
+	},
+	"extra": {
+		"display-name": "NavBar for phpBB",
+		"soft-require": {
+			"phpbb/phpbb": ">=3.1.5"
+		},
+		"version-check": {
+            "host": "orthohincom.github.io",
+            "directory": "/phpbb-navbar",
+            "filename": "version.json"
+		}
+	}
+}
