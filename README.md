@@ -1,10 +1,10 @@
-## Mega Menu / Sticky Menu
-#### Description:
+# Mega Menu / Sticky Menu
+### Description:
 This extensions adds a Mega menu / sticky menu to your phpBB forum and lets you customize it through ACP.
 
 Normal menu items can be added and edited through ACP.Knowledge on twiiter-botstrap is required for mega menu implemetation. Sample menu item has been added as example.
 
-#### Screenshots:
+### Screenshots:
 Dropdown Menu:
 
 ![Dropdown Menu](https://i.imgur.com/I7ppJKR.jpg "Dropdown Menu")
@@ -24,12 +24,12 @@ ACP:
 ![ACP](https://i.imgur.com/peZytm1.jpg)
 
 
-#### Installation:
+### Installation:
 Upload orthohin directory to your board's ext directory.
 Enable the extension in ACP.
 
 
-##### Resources Used:
+### Resources Used:
 * [Isolated Bootstrap](https://github.com/toert/Isolated-Bootstrap)
 * [Yamm 3!](https://github.com/geedmo/yamm3)
 * [placeholder.com](https://placeholder.com)
