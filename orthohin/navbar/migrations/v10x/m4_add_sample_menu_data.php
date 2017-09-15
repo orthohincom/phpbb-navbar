@@ -12,7 +12,7 @@
 namespace orthohin\navbar\migrations\v10x;
 
 /**
-* Migration stage 7: Add menu links
+* Migration stage 4: Add menu links
 */
 class m4_add_sample_menu_data extends \phpbb\db\migration\migration
 {
@@ -42,7 +42,7 @@ class m4_add_sample_menu_data extends \phpbb\db\migration\migration
 	}
 
 	/**
-	 * Custom function to add sampl menu data
+	 * Custom function to add sample menu data
 	 *
 	 * @return null
 	 * @access public
