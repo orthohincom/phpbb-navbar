@@ -115,12 +115,12 @@ class m4_add_sample_menu_data extends \phpbb\db\migration\migration
 				'mega_html'					=>	'&lt;div class=&quot;col-sm-8&quot;&gt;
   &lt;div class=&quot;yamm-content&quot;&gt;
     &lt;ul class=&quot;media-list&quot;&gt;
-      &lt;li class=&quot;media&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;pull-right&quot;&gt;&lt;img src=&quot;http://via.placeholder.com/64x64&quot; alt=&quot;64x64&quot; class=&quot;media-object&quot;&gt;&lt;/a&gt;
+      &lt;li class=&quot;media&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;pull-right&quot;&gt;&lt;img src=&quot;https://via.placeholder.com/64x64&quot; alt=&quot;64x64&quot; class=&quot;media-object&quot;&gt;&lt;/a&gt;
         &lt;div class=&quot;media-body&quot;&gt;
           &lt;h4 class=&quot;media-heading&quot;&gt;Media heading&lt;/h4&gt;Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante.
         &lt;/div&gt;
       &lt;/li&gt;
-      &lt;li class=&quot;media&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;pull-right&quot;&gt;&lt;img src=&quot;http://via.placeholder.com/64x64&quot; alt=&quot;64x64&quot; class=&quot;media-object&quot;&gt;&lt;/a&gt;
+      &lt;li class=&quot;media&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;pull-right&quot;&gt;&lt;img src=&quot;https://via.placeholder.com/64x64&quot; alt=&quot;64x64&quot; class=&quot;media-object&quot;&gt;&lt;/a&gt;
         &lt;div class=&quot;media-body&quot;&gt;
           &lt;h4 class=&quot;media-heading&quot;&gt;Media heading&lt;/h4&gt;Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque.
         &lt;/div&gt;
@@ -312,7 +312,7 @@ class m4_add_sample_menu_data extends \phpbb\db\migration\migration
 	&lt;/div&gt;
 	&lt;div class=&quot;col-md-3&quot;&gt;
 		&lt;h4&gt;Your title&lt;/h4&gt;
-		&lt;img class=&quot;img-responsive&quot; src=&quot;http://via.placeholder.com/194x194&quot; class=&quot;pull-left&quot; alt=&quot;&quot;&gt;
+		&lt;img class=&quot;img-responsive&quot; src=&quot;https://via.placeholder.com/194x194&quot; class=&quot;pull-left&quot; alt=&quot;&quot;&gt;
 	&lt;/div&gt;
 	&lt;div class=&quot;col-md-3&quot;&gt;
 		&lt;h4&gt;Your title&lt;/h4&gt;
