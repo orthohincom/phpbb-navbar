@@ -12,7 +12,7 @@
 namespace orthohin\navbar\migrations\v10x;
 
 /**
-* Migration stage 2: Initial module
+* Migration stage 3: Initial config data
 */
 class m3_initial_data extends \phpbb\db\migration\migration
 {
