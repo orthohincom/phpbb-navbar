@@ -34,4 +34,5 @@ Enable the extension in ACP.
 * [Isolated Bootstrap](https://github.com/toert/Isolated-Bootstrap)
 * [Yamm 3!](https://github.com/geedmo/yamm3)
 * [placeholder.com](https://placeholder.com)
+* [tinyColorPicker](https://github.com/PitPik/tinyColorPicker)
 
