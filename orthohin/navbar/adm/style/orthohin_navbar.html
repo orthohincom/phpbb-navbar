@@ -11,7 +11,7 @@
   <form method="post" action="" enctype="multipart/form-data">
   	<fieldset>
       <dl>
-        <dt><label for="is_color">{L_IS_COLOR}{L_COLON}</label></dt>
+        <dt><label for="is_color">{L_IS_COLOR}:</label></dt>
         <dd>
           <label><input type="radio" class="radio" name="is_color" value="1"<!-- IF IS_COLOR --> id="is_color" checked="checked"<!-- ENDIF --> /> {L_YES}</label>
           <label><input type="radio" class="radio" name="is_color" value="0"<!-- IF not IS_COLOR --> id="is_color" checked="checked"<!-- ENDIF --> /> {L_NO}</label>
@@ -23,12 +23,12 @@
       </dl>
 
 			<dl>
-				<dt><label for="text_color">{L_TEXT_COLOR}{L_COLON}</label><br />{L_TEXT_COLOR_EXPLAIN}</dt>
+				<dt><label for="text_color">{L_TEXT_COLOR}:</label><br />{L_TEXT_COLOR_EXPLAIN}</dt>
 				<dd><input class="color" type="text" name="text_color" id="text_color" value="{TEXT_COLOR}" /></dd>
 			</dl>
 
       <dl>
-        <dt><label for="menu_position">{L_MENU_POSITION}{L_COLON}</label></dt>
+        <dt><label for="menu_position">{L_MENU_POSITION}:</label></dt>
         <dd>
           <label><input type="radio" class="radio" name="menu_position" value="0"<!-- IF not MENU_POSITION --> id="menu_position" checked="checked"<!-- ENDIF --> /> {L_LEFT}</label>
           <label><input type="radio" class="radio" name="menu_position" value="1"<!-- IF MENU_POSITION --> id="menu_position" checked="checked"<!-- ENDIF --> /> {L_RIGHT}</label>
@@ -36,7 +36,7 @@
       </dl>
 
       <dl>
-        <dt><label for="image">{L_SELECT_LOGO}{L_COLON}</label><br>{L_IMG_UPLOAD_EXPLAIN}</dt>
+        <dt><label for="image">{L_SELECT_LOGO}:</label><br>{L_IMG_UPLOAD_EXPLAIN}</dt>
         <dd>
           <input type="file" name="image" id="image" />
       </dl>
@@ -51,7 +51,7 @@
   <fieldset class="img-bgs">
       <!-- IF LOGO_IMAGE_EXIST -->
       <dl>
-        <dt><label for="delete_logo">{L_IMAGE_LOGO}{L_COLON}</label><div style="margin-top: 5px;"><input type="checkbox" name="delete_logo" value="1" /> {L_CHECK_TO_DELETE}</div></dt>
+        <dt><label for="delete_logo">{L_IMAGE_LOGO}:</label><div style="margin-top: 5px;"><input type="checkbox" name="delete_logo" value="1" /> {L_CHECK_TO_DELETE}</div></dt>
         <dd><span class="bg-logo"><img height="100px" src="{LOGO_FILENAME}" alt="" /></span></dd>
       </dl>
       <!-- ENDIF -->
@@ -120,7 +120,7 @@
       <fieldset>
         <!-- IF not S_PARENT -->
         <dl>
-          <dt><label for="is_mega">{L_IS_MEGA_ENABLE}{L_COLON}</label></dt>
+          <dt><label for="is_mega">{L_IS_MEGA_ENABLE}:</label></dt>
           <dd>
             <input type="radio" class="radio" id="is_mega" name="is_mega" value="1"<!-- IF IS_MEGA --> checked="checked"<!-- ENDIF --> /> {L_YES} &nbsp; 
             <input type="radio" class="radio" id="is_mega" name="is_mega" value="0"<!-- IF not IS_MEGA --> checked="checked"<!-- ENDIF --> /> {L_NO}
@@ -136,14 +136,7 @@
           <dt><label for="button_icon">{L_MENU_ICON}</label><br />{L_MENU_BUTTON_ICON_EXP}</dt>
           <dd><input class="post" type="text" size="50" id="button_icon" name="button_icon" value="{S_ICON}" /> <span style="margin-top: 2px;"><i class="{S_ICON}" style="font-size:18px;vertical-align: middle;"></i></span></dd>
         </dl>
-        <!-- IF IS_MEGA -->
-        <dl>
-          <dt><label for="mega_html">{L_MEGA_HTML}{L_COLON}</label><br />{L_MEGA_HTML_EXP}</dt>
-        </dl>
-
-        <textarea id="mega_html" name="mega_html" style="font-family:'Courier New', monospace;font-size:9pt;line-height:125%;width:100%;" cols="80" rows="20">{MEGA_HTML}</textarea>
-
-        <!-- ELSE -->			
+        <!-- IF not IS_MEGA -->		
     		<dl>
     			<dt><label for="menu_button_url">{L_MENU_BUTTON_URL}</label><br />{L_MENU_BUTTON_URL_EXPLAIN}</dt>
     			<dd><input class="post" type="text" size="50" id="menu_button_url" name="button_url" value="{S_URL}" /></dd>
@@ -167,27 +160,34 @@
     				<input type="radio" class="radio" id="menu_button_external_no" name="button_external" value="0"<!-- IF not S_EXTERNAL --> checked="checked"<!-- ENDIF --> /> {L_NO}
           </dd>
     		</dl>
-    		<dl>
-    			<dt><label for="menu_button_only_registered_yes">{L_MENU_ONLY_REGISTERED}{L_COLON}</label></dt>
-    			<dd>
+        <!-- ENDIF -->
+        <dl>
+          <dt><label for="menu_button_only_registered_yes">{L_MENU_ONLY_REGISTERED}:</label></dt>
+          <dd>
             <input type="radio" class="radio" id="menu_button_only_registered_yes" name="button_only_registered" value="1"<!-- IF S_ONLY_REGISTERED --> checked="checked"<!-- ENDIF --> /> {L_YES} &nbsp; 
-    				<input type="radio" class="radio" id="menu_button_only_registered_no" name="button_only_registered" value="0"<!-- IF not S_ONLY_REGISTERED --> checked="checked"<!-- ENDIF --> /> {L_NO}
+            <input type="radio" class="radio" id="menu_button_only_registered_no" name="button_only_registered" value="0"<!-- IF not S_ONLY_REGISTERED --> checked="checked"<!-- ENDIF --> /> {L_NO}
           </dd>
-    		</dl>
-    		<dl>
-    			<dt><label for="menu_button_only_guest_yes">{L_MENU_ONLY_GUEST}{L_COLON}</label></dt>
-    			<dd>
+        </dl>
+        <dl>
+          <dt><label for="menu_button_only_guest_yes">{L_MENU_ONLY_GUEST}:</label></dt>
+          <dd>
             <input type="radio" class="radio" id="menu_button_only_guest_yes" name="button_only_guest" value="1"<!-- IF S_ONLY_GUEST --> checked="checked"<!-- ENDIF --> /> {L_YES} &nbsp; 
-    				<input type="radio" class="radio" id="menu_button_only_guest_no" name="button_only_guest" value="0"<!-- IF not S_ONLY_GUEST --> checked="checked"<!-- ENDIF --> /> {L_NO}
+            <input type="radio" class="radio" id="menu_button_only_guest_no" name="button_only_guest" value="0"<!-- IF not S_ONLY_GUEST --> checked="checked"<!-- ENDIF --> /> {L_NO}
           </dd>
-    		</dl>
-    		<dl>
-    			<dt><label for="menu_button_display_yes">{L_MENU_DISPLAY}{L_COLON}</label></dt>
-    			<dd>
+        </dl>
+        <dl>
+          <dt><label for="menu_button_display_yes">{L_MENU_DISPLAY}:</label></dt>
+          <dd>
             <input type="radio" class="radio" id="menu_button_display_yes" name="button_display" value="1"<!-- IF S_DISPLAY or not S_MENU_EDIT_BUTTON --> checked="checked"<!-- ENDIF --> /> {L_YES} &nbsp; 
-    				<input type="radio" class="radio" id="menu_button_display_no" name="button_display" value="0"<!-- IF not S_DISPLAY and S_MENU_EDIT_BUTTON --> checked="checked"<!-- ENDIF --> /> {L_NO}
+            <input type="radio" class="radio" id="menu_button_display_no" name="button_display" value="0"<!-- IF not S_DISPLAY and S_MENU_EDIT_BUTTON --> checked="checked"<!-- ENDIF --> /> {L_NO}
           </dd>
-    		</dl>
+        </dl>
+        <!-- IF IS_MEGA -->
+        <dl>
+          <dt><label for="mega_html">{L_MEGA_HTML}:</label><br />{L_MEGA_HTML_EXP}</dt>
+        </dl>
+
+        <textarea id="mega_html" name="mega_html" style="font-family:'Courier New', monospace;font-size:9pt;line-height:125%;width:100%;" cols="80" rows="20">{MEGA_HTML}</textarea>
         <!-- ENDIF -->
     	</fieldset>
       <p class="submit-buttons">
@@ -207,7 +207,7 @@
     <fieldset>
 
       <dl>
-        <dt><label for="enable_custom_css">{L_ENABLE_CUSTOM_CSS}{L_COLON}</label><br />{L_ENABLE_CUSTOM_CSS_EXPLAIN}</dt>
+        <dt><label for="enable_custom_css">{L_ENABLE_CUSTOM_CSS}:</label><br />{L_ENABLE_CUSTOM_CSS_EXPLAIN}</dt>
         <dd>
           <label><input type="radio" class="radio" name="enable_custom_css" value="1"<!-- IF ENABLED_CUSTOM_CSS --> id="enable_custom_css" checked="checked"<!-- ENDIF --> /> {L_YES}</label>
           <label><input type="radio" class="radio" name="enable_custom_css" value="0"<!-- IF not ENABLED_CUSTOM_CSS --> id="enable_custom_css" checked="checked"<!-- ENDIF --> /> {L_NO}</label>
@@ -215,7 +215,7 @@
       </dl>
 
       <dl>
-        <dt><label for="css_data">{L_SELECTED_FILE}{L_COLON}</label><br />{L_SELECTED_FILE_EXP}</dt>
+        <dt><label for="css_data">{L_SELECTED_FILE}:</label><br />{L_SELECTED_FILE_EXP}</dt>
         <dd>custom.css</dd>
       </dl>
 
