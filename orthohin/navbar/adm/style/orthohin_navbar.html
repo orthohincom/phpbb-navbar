@@ -51,12 +51,12 @@
   <fieldset class="img-bgs">
       <!-- IF LOGO_IMAGE_EXIST -->
       <dl>
-        <dt><label for="delete_logo">{L_IMAGE_LOGO}{L_COLON}</label><div style="margin-top{L_COLON} 5px;"><input type="checkbox" name="delete_logo" value="1" /> {L_CHECK_TO_DELETE}</div></dt>
+        <dt><label for="delete_logo">{L_IMAGE_LOGO}{L_COLON}</label><div style="margin-top: 5px;"><input type="checkbox" name="delete_logo" value="1" /> {L_CHECK_TO_DELETE}</div></dt>
         <dd><span class="bg-logo"><img height="100px" src="{LOGO_FILENAME}" alt="" /></span></dd>
       </dl>
       <!-- ENDIF -->
 
-      <p class="submit-buttons" style="text-align{L_COLON} left;"><input class="button1" type="submit" id="submit" name="delete" value="{L_DELETE}" /></p>
+      <p class="submit-buttons" style="text-align: left;"><input class="button1" type="submit" id="submit" name="delete" value="{L_DELETE}" /></p>
       {S_FORM_TOKEN}
     </fieldset>
   </form>
@@ -79,7 +79,7 @@
     					<strong><!-- IF not S_PARENT_ID --><a href="{buttons.U_OPEN}">{buttons.NAME}</a><!-- ELSE -->{buttons.NAME}<!-- ENDIF --></strong>
     					<br /><span>{buttons.URL}</span>
     				</td>
-    				<td style="width{L_COLON} 10%; text-align{L_COLON} center; white-space{L_COLON} nowrap;">
+    				<td style="width: 10%; text-align: center; white-space: nowrap;">
       				<!-- IF buttons.S_FIRST_ROW && not buttons.S_LAST_ROW -->
     						{ICON_MOVE_UP_DISABLED}
     						<a href="{buttons.U_MOVE_DOWN}">{ICON_MOVE_DOWN}</a>
@@ -134,7 +134,7 @@
 
         <dl>
           <dt><label for="button_icon">{L_MENU_ICON}</label><br />{L_MENU_BUTTON_ICON_EXP}</dt>
-          <dd><input class="post" type="text" size="50" id="button_icon" name="button_icon" value="{S_ICON}" /> <span style="margin-top{L_COLON} 2px;"><i class="{S_ICON}" style="font-size{L_COLON}18px;vertical-align{L_COLON} middle;"></i></span></dd>
+          <dd><input class="post" type="text" size="50" id="button_icon" name="button_icon" value="{S_ICON}" /> <span style="margin-top: 2px;"><i class="{S_ICON}" style="font-size:18px;vertical-align: middle;"></i></span></dd>
         </dl>
         <!-- IF not IS_MEGA -->		
     		<dl>
@@ -187,7 +187,7 @@
           <dt><label for="mega_html">{L_MEGA_HTML}{L_COLON}</label><br />{L_MEGA_HTML_EXP}</dt>
         </dl>
 
-        <textarea id="mega_html" name="mega_html" style="font-family{L_COLON}'Courier New', monospace;font-size{L_COLON}9pt;line-height{L_COLON}125%;width{L_COLON}100%;" cols="80" rows="20">{MEGA_HTML}</textarea>
+        <textarea id="mega_html" name="mega_html" style="font-family:'Courier New', monospace;font-size:9pt;line-height:125%;width:100%;" cols="80" rows="20">{MEGA_HTML}</textarea>
         <!-- ENDIF -->
     	</fieldset>
       <p class="submit-buttons">
@@ -219,7 +219,7 @@
         <dd>custom.css</dd>
       </dl>
 
-      <textarea id="css_data" name="css_data" style="font-family{L_COLON}'Courier New', monospace;font-size{L_COLON}9pt;line-height{L_COLON}125%;width{L_COLON}100%;" cols="80" rows="20">{CSS_DATA}</textarea>
+      <textarea id="css_data" name="css_data" style="font-family:'Courier New', monospace;font-size:9pt;line-height:125%;width:100%;" cols="80" rows="20">{CSS_DATA}</textarea>
 
     </fieldset>
     <p class="submit-buttons"><input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" /></p>
