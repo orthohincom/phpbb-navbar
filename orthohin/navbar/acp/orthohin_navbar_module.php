@@ -343,14 +343,14 @@ class orthohin_navbar_module
 						$row = $db->sql_fetchrow($result);
 					
 						$template->assign_vars(array(
-							'S_URL'							 => $row['button_url'],
+							'S_URL'							=> $row['button_url'],
 							'L_ACP_MENU_EDIT_BUTTON'		=> $user->lang('ORTHOHIN_NAVBAR_EDIT_BUTTON') . ' » ' . $row['button_name'],
 							'S_EXTERNAL'					=> $row['button_external'],
 							'S_NAME'						=> $row['button_name'],
 							'S_DESC'						=> $row['button_desc'],
-							'S_PARENT'	     				=> $row['parent_id'],
-							'S_DISPLAY'						 => $row['button_display'],
-							'S_ONLY_REGISTERED'				 => $row['button_only_registered'],
+							'S_PARENT'						=> $row['parent_id'],
+							'S_DISPLAY'						=> $row['button_display'],
+							'S_ONLY_REGISTERED'				=> $row['button_only_registered'],
 							'S_ONLY_GUEST'					=> $row['button_only_guest'],
 							'S_ICON'						=> $row['icon'],
 							'S_MENU_EDIT_BUTTON'			=> true,
@@ -361,12 +361,13 @@ class orthohin_navbar_module
 
 
 						//ignore other fields if mega menu is enabled.
-						$is_mega = $request->variable('is_mega', '');
+						$is_mega = (!empty($request->variable('is_mega', ''))) ? $request->variable('is_mega', '') : 0;
+
 						if ($request->is_set_post('submit') && $request->variable('is_mega', ''))
 						{
 							$button_name			= $request->variable('button_name', '', true);
 							$button_icon			= $request->variable('button_icon', '');
-							$mega_html 				= $request->variable('mega_html', '', true);
+							$mega_html				= $request->variable('mega_html', '', true);
 
 							$sql_ary = array(
 								'is_mega'					=> $is_mega,
@@ -374,10 +375,10 @@ class orthohin_navbar_module
 							if ($request->is_set('mega_html'))
 							{
 								$sql_ary = array(
-									'button_name' => $button_name,
-									'mega_html'   => $mega_html,
-									'is_mega'     => $is_mega,
-									'icon'        => $button_icon,
+									'button_name'	=> $button_name,
+									'mega_html'		=> $mega_html,
+									'is_mega'		=> $is_mega,
+									'icon'			=> $button_icon,
 								);
 							}
 							$sql = 'UPDATE ' . $table_prefix . 'orthohin_navbar_menu
@@ -423,16 +424,16 @@ class orthohin_navbar_module
 							if ($request->is_set('button_url'))
 							{
 								$sql_ary = array(
-									'button_url'             => $button_url,
-									'button_name'            => $button_name,
-									'button_desc'            => $button_desc,
-									'button_external'        => $button_external,
-									'button_display'         => $button_display,
-									'button_only_registered' => $button_only_registered,
-									'button_only_guest'      => $button_only_guest,
-									'parent_id'              => $button_parent,
-									'is_mega'                => $is_mega,
-									'icon'                   => $button_icon,
+									'button_url'			=> $button_url,
+									'button_name'			=> $button_name,
+									'button_desc'			=> $button_desc,
+									'button_external'		=> $button_external,
+									'button_display'		=> $button_display,
+									'button_only_registered'=> $button_only_registered,
+									'button_only_guest'		=> $button_only_guest,
+									'parent_id'				=> $button_parent,
+									'is_mega'				=> $is_mega,
+									'icon'					=> $button_icon,
 								);
 							}
 
@@ -480,13 +481,13 @@ class orthohin_navbar_module
 						{
 							$template->assign_block_vars('buttons', array(
 								'ID'				=> $row['button_id'],
-								'NAME'			=> $row['button_name'],
-								'URL'			 => $row['button_url'],
+								'NAME'				=> $row['button_name'],
+								'URL'				=> $row['button_url'],
 								'U_OPEN'			=> ($row['parent_id'] == 0) ? $this->u_action . '&amp;action=&amp;parent_id='.$row['button_id'] : $this->u_action . '&amp;action=&amp;parent_id='.$row['parent_id'].'&amp;button_id=' . $row['button_id'],
-								'U_DELETE'		=> ($row['parent_id'] == 0) ? $this->u_action . '&amp;action=delete&amp;parent_id=0&amp;button_id=' . $row['button_id'] : $this->u_action . '&amp;action=delete&amp;parent_id='.$row['parent_id'].'&amp;button_id=' . $row['button_id'],
+								'U_DELETE'			=> ($row['parent_id'] == 0) ? $this->u_action . '&amp;action=delete&amp;parent_id=0&amp;button_id=' . $row['button_id'] : $this->u_action . '&amp;action=delete&amp;parent_id='.$row['parent_id'].'&amp;button_id=' . $row['button_id'],
 								'U_EDIT'			=> ($row['parent_id'] == 0) ? $this->u_action . '&amp;action=edit_button&amp;parent_id=0&amp;button_id=' . $row['button_id'] : $this->u_action . '&amp;action=edit_button&amp;parent_id='.$row['parent_id'].'&amp;button_id=' . $row['button_id'],
 								'U_MOVE_UP'			=> ($row['parent_id'] == 0) ? $this->u_action . '&amp;action=move_up&amp;parent_id=0&amp;button_id=' . $row['button_id'] : $this->u_action . '&amp;action=move_up&amp;parent_id='.$row['parent_id'].'&amp;button_id=' . $row['button_id'],
-								'U_MOVE_DOWN'	 => ($row['parent_id'] == 0) ? $this->u_action . '&amp;action=move_down&amp;parent_id=0&amp;button_id=' . $row['button_id'] : $this->u_action . '&amp;action=move_down&amp;parent_id='.$row['parent_id'].'&amp;button_id=' . $row['button_id'],
+								'U_MOVE_DOWN'		=> ($row['parent_id'] == 0) ? $this->u_action . '&amp;action=move_down&amp;parent_id=0&amp;button_id=' . $row['button_id'] : $this->u_action . '&amp;action=move_down&amp;parent_id='.$row['parent_id'].'&amp;button_id=' . $row['button_id'],
 							));
 						}
 						$db->sql_freeresult($result);
