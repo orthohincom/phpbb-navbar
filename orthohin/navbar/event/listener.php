@@ -152,7 +152,7 @@ class listener implements EventSubscriberInterface
 			);
 			$sub_result = $this->db->sql_query($this->db->sql_build_query('SELECT', $sql_ary));
 			while ($sub_row = $this->db->sql_fetchrow($sub_result)) {
-				if (($sub_row['button_only_registered'] && $this->user->data['user_id'] == ANONYMOUS) || ($sub_row['button_only_guest'] && $user->data['user_id'] != ANONYMOUS))
+				if (($sub_row['button_only_registered'] && $this->user->data['user_id'] == ANONYMOUS) || ($sub_row['button_only_guest'] && $this->user->data['user_id'] != ANONYMOUS))
 				{
 					continue;
 				}
