@@ -28,6 +28,16 @@ ACP:
 Upload orthohin directory to your board's ext directory.
 Enable the extension in ACP.
 
+### Changelog:
+Version 1.0.2
+Changelog:
+-> Added support for template variables in html field.
+
+Version: 1.0.1
+Changelog: 
+-> fixed an sql error while editing sub-menu item.
+-> fixed an issue where text inside the dropdown box are bigger than the dropdown box itself.
+
 #### [Support topic at phpbb.com](https://www.phpbb.com/community/viewtopic.php?f=456&t=2438676)
 
 ### Resources Used:
@@ -35,4 +45,6 @@ Enable the extension in ACP.
 * [Yamm 3!](https://github.com/geedmo/yamm3)
 * [placeholder.com](https://placeholder.com)
 * [tinyColorPicker](https://github.com/PitPik/tinyColorPicker)
+
+
 
