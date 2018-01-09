@@ -130,15 +130,41 @@ class listener implements EventSubscriberInterface
 				$row['button_desc'] = $this->user->lang[$var_name];
 			}
 
+
+			if (preg_match_all("/\{(.*?)\}/", $row['mega_html'], $matches))
+			{
+				foreach ($matches[0] as $var_name){
+					if (preg_match("/\{L_/", $var_name)){
+						$brackets = array("{L_", "}");
+						$var_text = strtoupper(str_replace($brackets, '', $var_name));
+						$var_text = $this->user->lang[$var_text];
+						$row["mega_html"] = str_replace($var_name,$var_text,$row["mega_html"]);
+					}
+					else{
+						$brackets = array("{", "}");
+						$var_text = strtoupper(str_replace($brackets, '', $var_name));
+						if ($var_text == 'U_MARK_FORUMS')
+						{
+							$var_text = ($this->user->data['is_registered'] || $this->config['load_anon_lastread']) ? append_sid("{$this->root_path}index.{$this->php_ext}", 'hash=' . generate_link_hash('global') . '&mark=forums&mark_time=' . time()) : '';
+						}
+						else
+						{
+							$var_text = isset($rootref[$var_text]) ? $rootref[$var_text] : '#';
+						}
+						$row["mega_html"] = str_replace($var_name,$var_text,$row["mega_html"]);
+					}
+				}
+			}
+
 			$this->template->assign_block_vars('menu', array(
-				'ID'          => $row['button_id'],
-				'URL'         => $row['button_url'],
-				'NAME'        => $row['button_name'],
-				'DESC'        => $row['button_desc'],
-				'EXTERNAL'    => $row['button_external'],
-				'ICON'	 		=> $row['icon'],
-				'IS_MEGA'	 	=> $row['is_mega'],
-				'MEGA_HTML'	 	=> htmlspecialchars_decode($row['mega_html']),
+				'ID'			=> $row['button_id'],
+				'URL'			=> $row['button_url'],
+				'NAME'			=> $row['button_name'],
+				'DESC'			=> $row['button_desc'],
+				'EXTERNAL'		=> $row['button_external'],
+				'ICON'			=> $row['icon'],
+				'IS_MEGA'		=> $row['is_mega'],
+				'MEGA_HTML'		=> htmlspecialchars_decode($row['mega_html']),
 			));
 
 			// Load sub-buttons
@@ -172,11 +198,11 @@ class listener implements EventSubscriberInterface
 				}
 
 				$this->template->assign_block_vars('menu.sub', array(
-					'ID'            => $sub_row['button_id'],
-					'URL'           => $sub_row['button_url'],
-					'NAME'          => $sub_row['button_name'],
-					'EXTERNAL'  	=> $sub_row['button_external'],
-					'ICON'    		=> $sub_row['icon'],
+					'ID'			=> $sub_row['button_id'],
+					'URL'			=> $sub_row['button_url'],
+					'NAME'			=> $sub_row['button_name'],
+					'EXTERNAL'		=> $sub_row['button_external'],
+					'ICON'			=> $sub_row['icon'],
 				));
 			}
 			$this->db->sql_freeresult($sub_result);
@@ -227,8 +253,8 @@ class listener implements EventSubscriberInterface
 
 		// Uploaded images
 		$this->template->assign_vars(array(
-			'LOGO_IMAGE_EXIST'	        	=> $logo_exist,
-			'LOGO_FILENAME'	            	=> $file,
+			'LOGO_IMAGE_EXIST'				=> $logo_exist,
+			'LOGO_FILENAME'					=> $file,
 
 			// custom CSS
 			'S_ALLOW_CUSTOMCSS'				=> $this->config['orthohin_navbar_custom_css'],
