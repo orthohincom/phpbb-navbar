@@ -3,7 +3,7 @@
 	"type": "phpbb-extension",
 	"description": "This extension allows the administrator to easily add and customize navbar item.",
 	"homepage": "http://www.orthohin.com",
-	"version": "1.0.1",
+	"version": "1.0.3",
 	"keywords": ["phpbb", "navbar", "stickymenu", "megamenu"],
 	"license": "GNU General Public License v3.0",
 	"authors": [
