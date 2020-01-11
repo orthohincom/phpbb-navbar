@@ -1,3 +1,3 @@
 parameters:
-    orthohin.navbar.tables.orthohin_navbar_menu: %core.table_prefix%orthohin_navbar_menu
-    orthohin.navbar.tables.orthohin_navbar_config: %core.table_prefix%orthohin_navbar_config
+    orthohin.navbar.tables.orthohin_navbar_menu: '%core.table_prefix%orthohin_navbar_menu'
+    orthohin.navbar.tables.orthohin_navbar_config: '%core.table_prefix%orthohin_navbar_config'
