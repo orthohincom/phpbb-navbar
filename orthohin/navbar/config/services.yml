@@ -5,13 +5,13 @@ services:
     orthohin.navbar.listener:
         class: orthohin\navbar\event\listener
         arguments:
-            - @dbal.conn
-            - @config
-            - @template
-            - @user
-            - %core.root_path%
-            - %core.php_ext%
-            - %orthohin.navbar.tables.orthohin_navbar_menu%
-            - %orthohin.navbar.tables.orthohin_navbar_config%
+            - '@dbal.conn'
+            - '@config'
+            - '@template'
+            - '@user'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+            - '%orthohin.navbar.tables.orthohin_navbar_menu%'
+            - '%orthohin.navbar.tables.orthohin_navbar_config%'
         tags:
             - { name: event.listener }
