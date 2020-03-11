@@ -29,6 +29,14 @@ Upload orthohin directory to your board's ext directory.
 Enable the extension in ACP.
 
 ### Changelog:
+Version 1.0.4
+Changelog:
+-> Addec font-awesome icon picker and some cosmetic changes in the ACP.
+
+Version 1.0.3
+Changelog:
+-> phpBB v3.3 compatibility
+
 Version 1.0.2
 Changelog:
 -> Added support for template variables in html field.
@@ -45,6 +53,7 @@ Changelog:
 * [Yamm 3!](https://github.com/geedmo/yamm3)
 * [placeholder.com](https://placeholder.com)
 * [tinyColorPicker](https://github.com/PitPik/tinyColorPicker)
+* [fontawesome-iconpicker](https://github.com/itsjavi/fontawesome-iconpicker/tree/fontawesome-4)
 
 
 
