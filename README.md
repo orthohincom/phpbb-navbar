@@ -1,6 +1,6 @@
 # Mega Menu / Sticky Menu
 ### Description:
-This extensions adds a Mega menu / sticky menu to your phpBB forum and lets you customize it through ACP.
+This extensions adds a Mega menu / sticky menu to your phpBB forum and lets you customize it through ACP. 
 
 Normal menu items can be added and edited through ACP.Knowledge on twiiter-botstrap is required for mega menu implemetation. Sample menu item has been added as example.
 
@@ -21,7 +21,7 @@ ACP:
 
 ![ACP](https://i.imgur.com/NMeR4Wi.jpg "ACP General")
 
-![ACP](https://i.imgur.com/peZytm1.jpg)
+![ACP](https://i.imgur.com/CtTXK4h.png)
 
 
 ### Installation:
