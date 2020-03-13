@@ -50,10 +50,10 @@ class m3_initial_data extends \phpbb\db\migration\migration
 	public function insert_sample_config_data()
 	{
 		$sample_config_data = array(
-			array('config_name'  => 'is_color', 'config_value'  => 0),
-			array('config_name'  => 'background_color', 'config_value'  => '#ffffff'),
-			array('config_name'  => 'text_color', 'config_value'  => '#000000'),
-			array('config_name'  => 'menu_position', 'config_value'  => 0),
+			array('config_name'	=> 'is_color', 'config_value'	=> 0),
+			array('config_name'	=> 'background_color', 'config_value'	=> '#ffffff'),
+			array('config_name'	=> 'text_color', 'config_value'	=> '#000000'),
+			array('config_name'	=> 'menu_position', 'config_value'	=> 0),
 		);
 
 		$this->db->sql_multi_insert($this->table_prefix . 'orthohin_navbar_config', $sample_config_data);
