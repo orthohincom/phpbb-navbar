@@ -162,7 +162,7 @@ class listener implements EventSubscriberInterface
 				'NAME'			=> $row['button_name'],
 				'DESC'			=> $row['button_desc'],
 				'EXTERNAL'		=> $row['button_external'],
-				'ICON'			=> $row['icon'],
+				'ICON'			=> "fa ".$row['icon'],
 				'IS_MEGA'		=> $row['is_mega'],
 				'MEGA_HTML'		=> htmlspecialchars_decode($row['mega_html']),
 			));
@@ -202,7 +202,7 @@ class listener implements EventSubscriberInterface
 					'URL'			=> $sub_row['button_url'],
 					'NAME'			=> $sub_row['button_name'],
 					'EXTERNAL'		=> $sub_row['button_external'],
-					'ICON'			=> $sub_row['icon'],
+					'ICON'			=> "fa ".$sub_row['icon'],
 				));
 			}
 			$this->db->sql_freeresult($sub_result);

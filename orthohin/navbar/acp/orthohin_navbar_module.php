@@ -28,7 +28,7 @@ class orthohin_navbar_module
 		switch($mode)
 		{
 			case 'config':
-		
+
 				$this->page_title = $user->lang('ORTHOHIN_NAVBAR_TITLE') . ' - ' . $user->lang('ORTHOHIN_NAVBAR_CONFIG');
 
 				if ($request->is_set_post('submit'))
@@ -71,7 +71,7 @@ class orthohin_navbar_module
 							else
 							{
 								$files = glob($phpbb_root_path . 'ext/orthohin/navbar/images/logo/*');
-					
+
 								if ($files && sizeof($files))
 								{
 									foreach($files as $file)
@@ -84,7 +84,7 @@ class orthohin_navbar_module
 								}
 
 								move_uploaded_file($image["tmp_name"], $phpbb_root_path. "ext/orthohin/navbar/images/logo/" . $image_name);
-								
+
 								// trigger_error($user->lang('IMG_UPLOADED') . adm_back_link($this->u_action));
 							}
 						}
@@ -164,31 +164,31 @@ class orthohin_navbar_module
 					));
 				}
 				$db->sql_freeresult($result);
-		
+
 				$template->assign_vars(array(
 					'S_ORTHOHIN_NAVBAR_CONFIG'	=> true,
 				));
-				
+
 			break; // config
-		
+
 			case 'menu':
-		
+
 				$this->page_title	= $user->lang('ORTHOHIN_NAVBAR_TITLE') . ' - ' . $user->lang('ORTHOHIN_NAVBAR_BUTTONS');
-		
+
 				$action	= $request->variable('action', '');
 				$parent_id = $request->variable('parent_id', 0);
 				$button_id = $request->variable('button_id', 0);
-		
+
 				$template->assign_vars(array(
 					'S_ORTHOHIN_NAVBAR_MENU'	=> true,
 					'S_PARENT_ID'				=> $parent_id,
-				));	 
-				
-				
+				));
+
+
 				switch ($action)
 				{
 					case "delete":
-			
+
 						if (confirm_box(true))
 						{
 							$sql_ary = array(
@@ -200,13 +200,13 @@ class orthohin_navbar_module
 							);
 							$result = $db->sql_query($db->sql_build_query('SELECT', $sql_ary));
 							while ($row = $db->sql_fetchrow($result))
-							{	 
+							{
 								$sql = 'DELETE FROM ' . $table_prefix . 'orthohin_navbar_menu
 										WHERE button_id = ' . $row['button_id'];
-								$db->sql_query($sql);	
+								$db->sql_query($sql);
 							}
 							$db->sql_freeresult($result);
-						
+
 							$sql = 'DELETE FROM ' . $table_prefix . 'orthohin_navbar_menu
 									WHERE button_id = ' . $button_id;
 							$db->sql_query($sql);
@@ -235,13 +235,13 @@ class orthohin_navbar_module
 
 							redirect($this->u_action . '&amp;parent_id=' . $parent_id);
 						}
-						
+
 					break;
-			
-					case "add_button":	
-							
+
+					case "add_button":
+
 						$button_name = $request->variable('button_name', '', true);
-			
+
 						$template->assign_vars(array(
 							'S_NAME'					 => $button_name,
 							'S_MENU_CREATE_BUTTON'	 => true,
@@ -258,7 +258,7 @@ class orthohin_navbar_module
 						);
 						$result = $db->sql_query($db->sql_build_query('SELECT', $sql_ary));
 						while ($row = $db->sql_fetchrow($result))
-						{	 
+						{
 							$template->assign_block_vars('parents', array(
 								'ID'				 => $row['button_id'],
 								'NAME'				 => $row['button_name'],
@@ -267,14 +267,14 @@ class orthohin_navbar_module
 						$db->sql_freeresult($result);
 
 						if ($request->is_set_post('submit'))
-						{		 
+						{
 							$button_url	= $request->variable('button_url', '', true);
 							$button_name	= $request->variable('button_name', '', true);
 							$button_desc	= $request->variable('button_desc', '', true);
 							$button_parent	= $request->variable('button_parent', 0);
 							$button_external	= $request->variable('button_external', 0);
 							$button_display	= $request->variable('button_display', 1);
-							$button_only_registered	= $request->variable('button_only_registered', 0);	 
+							$button_only_registered	= $request->variable('button_only_registered', 0);
 							$button_only_guest	= $request->variable('button_only_guest', 0);
 							$button_icon	= $request->variable('button_icon', '');
 
@@ -287,7 +287,7 @@ class orthohin_navbar_module
 							$result = $db->sql_query($db->sql_build_query('SELECT', $sql_ary));
 							$row = $db->sql_fetchrow($result);
 							$db->sql_freeresult($result);
-							
+
 							$left_id = $row['right_id'] + 1;
 							$right_id = $row['right_id'] + 2;
 
@@ -308,9 +308,9 @@ class orthohin_navbar_module
 
 							trigger_error($user->lang('BUTTON_ADDED') . adm_back_link($this->u_action.'&amp;parent_id='.$button_parent));
 						}
-			
-					break;		
-			
+
+					break;
+
 					case "edit_button":
 
 						// Load buttons for select
@@ -324,7 +324,7 @@ class orthohin_navbar_module
 						);
 						$result = $db->sql_query($db->sql_build_query('SELECT', $sql_ary));
 						while ($row = $db->sql_fetchrow($result))
-						{	 
+						{
 							$template->assign_block_vars('parents', array(
 								'ID'	=> $row['button_id'],
 								'NAME'	=> $row['button_name'],
@@ -341,7 +341,7 @@ class orthohin_navbar_module
 						);
 						$result = $db->sql_query($db->sql_build_query('SELECT', $sql_ary));
 						$row = $db->sql_fetchrow($result);
-					
+
 						$template->assign_vars(array(
 							'S_URL'							=> $row['button_url'],
 							'L_ACP_MENU_EDIT_BUTTON'		=> $user->lang('ORTHOHIN_NAVBAR_EDIT_BUTTON') . ' » ' . $row['button_name'],
@@ -444,9 +444,9 @@ class orthohin_navbar_module
 
 							trigger_error($user->lang('BUTTON_UPDATED') . adm_back_link($this->u_action.'&amp;parent_id='.$button_parent));
 						}
-			
+
 					break;
-					
+
 					case 'move_up':
 					case 'move_down':
 
@@ -459,13 +459,13 @@ class orthohin_navbar_module
 						);
 						$result = $db->sql_query($db->sql_build_query('SELECT', $sql_ary));
 						$row = $db->sql_fetchrow($result);
-						
+
 						$this->move_menu_by($row, $action);
-						
+
 						redirect($this->u_action);
-						
+
 					break;
-		
+
 					default:
 
 						$sql_ary = array(
@@ -482,7 +482,9 @@ class orthohin_navbar_module
 							$template->assign_block_vars('buttons', array(
 								'ID'				=> $row['button_id'],
 								'NAME'				=> $row['button_name'],
+								'ICON'				=> $row['icon'],
 								'URL'				=> $row['button_url'],
+								'IS_MEGA'			=> $row['is_mega'],
 								'U_OPEN'			=> ($row['parent_id'] == 0) ? $this->u_action . '&amp;action=&amp;parent_id='.$row['button_id'] : $this->u_action . '&amp;action=&amp;parent_id='.$row['parent_id'].'&amp;button_id=' . $row['button_id'],
 								'U_DELETE'			=> ($row['parent_id'] == 0) ? $this->u_action . '&amp;action=delete&amp;parent_id=0&amp;button_id=' . $row['button_id'] : $this->u_action . '&amp;action=delete&amp;parent_id='.$row['parent_id'].'&amp;button_id=' . $row['button_id'],
 								'U_EDIT'			=> ($row['parent_id'] == 0) ? $this->u_action . '&amp;action=edit_button&amp;parent_id=0&amp;button_id=' . $row['button_id'] : $this->u_action . '&amp;action=edit_button&amp;parent_id='.$row['parent_id'].'&amp;button_id=' . $row['button_id'],
@@ -493,13 +495,13 @@ class orthohin_navbar_module
 						$db->sql_freeresult($result);
 
 						if ($request->is_set_post('submit'))
-						{			
+						{
 							$button_name = $request->variable('button_name', '', true);
 							redirect($this->u_action . '&amp;action=add_button&amp;parent_id=' . $parent_id . '&amp;button_name=' . $button_name);
-						}	
-			
+						}
+
 						$button_nav = $user->lang('MENU_NAV');
-			
+
 						if ($parent_id)
 						{
 							$sql_ary = array(
@@ -512,7 +514,7 @@ class orthohin_navbar_module
 							$result = $db->sql_query($db->sql_build_query('SELECT', $sql_ary));
 							$button_nav .= ' » ' . $db->sql_fetchfield('button_name');
 						}
-							 
+
 						$template->assign_vars(array(
 							'S_MENU_BUTTONS_LIST'			=> true,
 							'S_BUTTONS_NAV'				=> $button_nav,
@@ -534,8 +536,8 @@ class orthohin_navbar_module
 					file_put_contents($phpbb_root_path . 'ext/orthohin/navbar/styles/all/theme/custom.css', htmlspecialchars_decode($request->variable('css_data', '', true)), ENT_COMPAT);
 
 					trigger_error($user->lang('CSS_UPDATED') . adm_back_link($this->u_action));
-				}	 
-		
+				}
+
 				$template->assign_vars(array(
 					'S_ORTHOHIN_NAVBAR_CSS'	=> true,
 					'ENABLED_CUSTOM_CSS'	=> $config['orthohin_navbar_custom_css'],
@@ -650,7 +652,7 @@ class orthohin_navbar_module
 
 		if (!sizeof($target))
 		{
-		  // The button is already on top or bottom
+			// The button is already on top or bottom
 			return false;
 		}
 
@@ -697,5 +699,5 @@ class orthohin_navbar_module
 				left_id BETWEEN {$left_id} AND {$right_id}
 				AND right_id BETWEEN {$left_id} AND {$right_id}";
 		$db->sql_query($sql);
-	}	
+	}
 }
