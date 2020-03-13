@@ -39,28 +39,28 @@ class m1_initial_schema extends \phpbb\db\migration\migration
 		return array(
 			'add_tables'	=> array(
 				$this->table_prefix . 'orthohin_navbar_menu'	=> array(
-					'COLUMNS'			     => array(
-						'button_id'              => array('UINT', NULL, 'auto_increment'),
-						'button_url'             => array('TEXT', ''),
-						'button_name'            => array('VCHAR', ''),
-						'button_desc'            => array('VCHAR', ''),
-						'button_external'        => array('BOOL', '0'),
-						'button_display'         => array('BOOL', '1'),
-						'button_only_registered' => array('BOOL', '0'),
-						'button_only_guest'		 => array('BOOL', '0'),
-						'left_id' 				 => array('UINT', '0'),
-						'right_id' 				 => array('UINT', '0'),
-						'parent_id' 			 => array('UINT', '0'),
-						'is_mega'     			 => array('BOOL', '0'),
-						'mega_html'     		 => array('TEXT_UNI', NULL),
-						'icon' 					 => array('VCHAR', ''),
+					'COLUMNS'				=> array(
+						'button_id'				=> array('UINT', NULL, 'auto_increment'),
+						'button_url'			=> array('TEXT', ''),
+						'button_name'			=> array('VCHAR', ''),
+						'button_desc'			=> array('VCHAR', ''),
+						'button_external'		=> array('BOOL', '0'),
+						'button_display'		=> array('BOOL', '1'),
+						'button_only_registered'=> array('BOOL', '0'),
+						'button_only_guest'		=> array('BOOL', '0'),
+						'left_id'				=> array('UINT', '0'),
+						'right_id'				=> array('UINT', '0'),
+						'parent_id'				=> array('UINT', '0'),
+						'is_mega'				=> array('BOOL', '0'),
+						'mega_html'				=> array('TEXT_UNI', NULL),
+						'icon'					=> array('VCHAR', ''),
 					),
 					'PRIMARY_KEY' => array('button_id'),
 				),
 				$this->table_prefix . 'orthohin_navbar_config'	=> array(
-					'COLUMNS'			    => array(
-						'config_name'		    => array('VCHAR', ''),
-						'config_value'		    => array('TEXT', ''),
+					'COLUMNS'				=> array(
+						'config_name'			=> array('VCHAR', ''),
+						'config_value'			=> array('TEXT', ''),
 					),
 				),
 			),
