@@ -482,7 +482,9 @@ class orthohin_navbar_module
 							$template->assign_block_vars('buttons', array(
 								'ID'				=> $row['button_id'],
 								'NAME'				=> $row['button_name'],
+								'ICON'				=> $row['icon'],
 								'URL'				=> $row['button_url'],
+								'IS_MEGA'			=> $row['is_mega'],
 								'U_OPEN'			=> ($row['parent_id'] == 0) ? $this->u_action . '&amp;action=&amp;parent_id='.$row['button_id'] : $this->u_action . '&amp;action=&amp;parent_id='.$row['parent_id'].'&amp;button_id=' . $row['button_id'],
 								'U_DELETE'			=> ($row['parent_id'] == 0) ? $this->u_action . '&amp;action=delete&amp;parent_id=0&amp;button_id=' . $row['button_id'] : $this->u_action . '&amp;action=delete&amp;parent_id='.$row['parent_id'].'&amp;button_id=' . $row['button_id'],
 								'U_EDIT'			=> ($row['parent_id'] == 0) ? $this->u_action . '&amp;action=edit_button&amp;parent_id=0&amp;button_id=' . $row['button_id'] : $this->u_action . '&amp;action=edit_button&amp;parent_id='.$row['parent_id'].'&amp;button_id=' . $row['button_id'],
