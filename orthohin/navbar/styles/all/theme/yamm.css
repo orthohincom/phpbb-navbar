@@ -27,7 +27,7 @@
 	list-style: none;
 }
 
-.bootstrap .dropdown-menu	li	a {
+.bootstrap .dropdown-menu li a {
 	display: block;
 	padding: 3px 20px;
 	clear: both;
