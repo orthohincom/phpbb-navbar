@@ -652,7 +652,7 @@ class orthohin_navbar_module
 
 		if (!sizeof($target))
 		{
-		  // The button is already on top or bottom
+			// The button is already on top or bottom
 			return false;
 		}
 
