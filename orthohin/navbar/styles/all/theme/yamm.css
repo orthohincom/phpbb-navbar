@@ -8,38 +8,38 @@
 .bootstrap .yamm .collapse,
 .bootstrap .yamm .dropup,
 .bootstrap .yamm .drop-down {
-  position: static;
+	position: static;
 }
 .bootstrap .yamm .container {
-  position: relative;
+	position: relative;
 }
 .bootstrap .yamm .mega-menu {
-  left: 0;
-  right: 0;
+	left: 0;
+	right: 0;
 }
 .bootstrap .yamm .yamm-content {
-  padding: 20px 30px;
+	padding: 20px 30px;
 }
 
 
 /*Custom styles*/
 .bootstrap ul li {
-  list-style: none;
+	list-style: none;
 }
 
-.bootstrap .dropdown-menu  li  a {
-  display: block;
-  padding: 3px 20px;
-  clear: both;
-  font-weight: normal;
-  line-height: 1.42857143;
-  color: #333333;
-  white-space: nowrap;
+.bootstrap .dropdown-menu	li	a {
+	display: block;
+	padding: 3px 20px;
+	clear: both;
+	font-weight: normal;
+	line-height: 1.42857143;
+	color: #333333;
+	white-space: nowrap;
 }
 
 .bootstrap ul ul li:hover a{
-  color: rgba(51,51,51,0.5);
+	color: rgba(51,51,51,0.5);
 }
 .bootstrap ul li a:hover{
-  text-decoration: none;
+	text-decoration: none;
 }
