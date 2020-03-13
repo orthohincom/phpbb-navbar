@@ -29,21 +29,23 @@ Upload orthohin directory to your board's ext directory.
 Enable the extension in ACP.
 
 ### Changelog:
-Version 1.0.4
+
+##### Version 1.0.4
 Changelog:
+
 -> Addec font-awesome icon picker and some cosmetic changes in the ACP.
 
-Version 1.0.3
-Changelog:
+##### Version 1.0.3
+Changelog:  
 -> phpBB v3.3 compatibility
 
-Version 1.0.2
-Changelog:
+##### Version 1.0.2
+Changelog:  
 -> Added support for template variables in html field.
 
-Version: 1.0.1
-Changelog: 
--> fixed an sql error while editing sub-menu item.
+##### Version: 1.0.1
+Changelog:   
+-> fixed an sql error while editing sub-menu item.  
 -> fixed an issue where text inside the dropdown box are bigger than the dropdown box itself.
 
 #### [Support topic at phpbb.com](https://www.phpbb.com/community/viewtopic.php?f=456&t=2438676)
