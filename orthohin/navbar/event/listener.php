@@ -242,7 +242,7 @@ class listener implements EventSubscriberInterface
 				if(is_file($file))
 				{
 					$temp = explode(".", $file);
-					if (end($temp) == 'png' || end($temp) == 'jpg' || end($temp) == 'jpeg' || end($temp) == 'gif')
+					if (end($temp) == 'png' || end($temp) == 'jpg' || end($temp) == 'jpeg' || end($temp) == 'gif' || end($temp) == 'svg')
 					{
 						$logo_exist = true;
 						$logo_filename = basename($file);
