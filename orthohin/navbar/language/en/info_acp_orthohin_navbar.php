@@ -68,8 +68,8 @@ $lang = array_merge($lang, array(
 	
 	
 	'IMG_UPLOADED'						=> 'Image has been uploaded Successfully',
-	'IMG_UPLOAD_EXPLAIN'				=> 'Allowed extensions are png, jpg, jpeg and gif.',
-	'IMG_UPLOAD_ERROR'					=> 'Only png, jpg, jpeg and gif extensions are allowed.',
+	'IMG_UPLOAD_EXPLAIN'				=> 'Allowed extensions are svg, png, jpg, jpeg and gif.',
+	'IMG_UPLOAD_ERROR'					=> 'Only svg, png, jpg, jpeg and gif extensions are allowed.',
 
 	'IMAGE_LOGO'						=> 'Site logo',
 	'CHECK_TO_DELETE'					=> 'Check to Delete then hit the delete button',
