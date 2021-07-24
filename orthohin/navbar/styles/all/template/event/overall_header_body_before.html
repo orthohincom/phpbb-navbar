@@ -31,7 +31,9 @@
 						<span class="icon-bar"></span>
 					</button>
 					<!-- IF LOGO_IMAGE_EXIST -->
-						<img height= "50px" src="{LOGO_FILENAME}" alt="{SITENAME}"/>
+						<a class="navbar-logo" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->">
+							<img height= "50px" src="{LOGO_FILENAME}" alt="{SITENAME}"/>
+						</a>
 					<!-- ELSE -->
 						<a class="navbar-brand" href="<!-- IF U_SITE_HOME -->{U_SITE_HOME}<!-- ELSE -->{U_INDEX}<!-- ENDIF -->" title="<!-- IF U_SITE_HOME -->{L_SITE_HOME}<!-- ELSE -->{L_INDEX}<!-- ENDIF -->">{SITENAME}</a>
 					<!-- ENDIF -->
